@@ -1,0 +1,16 @@
+FIELDATLAS — FREE GITHUB PAGES INSTALLATION
+
+1. Create a free GitHub account at https://github.com/signup
+2. Create a PUBLIC repository called fieldatlas (GitHub Free Pages requires a public repository).
+3. Extract the ZIP on your Windows computer. Do not upload the ZIP itself.
+4. In the repository, choose Add file > Upload files, then drag the *contents* of the extracted folder to GitHub. index.html, sw.js, manifest.webmanifest, icon.svg, and icon.png must be at the repository root, not nested in a fieldatlas folder. Commit changes.
+5. Open Settings > Pages. Under Build and deployment choose Source: Deploy from a branch; branch: main; folder: /(root); Save.
+6. When GitHub shows your published URL it will typically look like https://YOUR-GITHUB-USERNAME.github.io/fieldatlas/ . Open it in Safari on your iPhone while connected to Wi-Fi.
+7. Safari > Share > Add to Home Screen > Add. Launch the new Home Screen icon while ONLINE once, allow its shell to cache, then enable Airplane Mode and verify you can reopen it and see saved test waypoints.
+
+NOTES:
+- Data you create inside the app is stored on your iPhone, not GitHub. The CODE is public. Avoid uploading sensitive hunting locations or private documents to the repository.
+- This V1 app has a coordinate grid only, not a satellite or topo basemap. It supports optional GeoJSON imports and temporary user-supplied georeferenced image imports. Offline use requires prior setup. Offline data can be cleared by iOS; export backups.
+- iPhone browser apps may stop GPS recording while backgrounded or locked. Do not rely on this as your sole navigation tool.
+- Do NOT bulk-download OSM public tiles or third-party imagery without permission; parcel lines are informational, not legal surveys.
+- $0 cost reflects current GitHub Free hosting terms and no paid third-party services; providers may change their terms in the future.
