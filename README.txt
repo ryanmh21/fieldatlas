@@ -1,34 +1,19 @@
-FIELDATLAS V1 — FREE OFFLINE-FIRST HUNTING MAP
+FIELDATLAS V2 — USGS LIVE MAP + OFFLINE TILE PACKS
 
-WHAT WORKS NOW:
-- Offline-first app shell after first successful HTTPS installation
-- Pan/zoom coordinate canvas; latitude/longitude jump; GPS positioning
-- Save/delete stands, feeders, trail cameras, buck sightings and other markers
-- GPS tracks while app stays active in foreground
-- Distance measuring, saved home point
-- Import WGS84 GeoJSON parcel polygons/roads/trails and tap parcels to inspect attributes
-- Import georeferenced PNG/JPEG imagery in current session (NOT persistent)
-- Export and restore JSON backups
-- No accounts, subscriptions, ads, paid APIs, trackers, or external network map services
+NEW: Satellite and topographic maps from USGS The National Map. Select the layer, browse on Wi-Fi, and use Download visible map to save a bounded area at three zoom levels. Offline maps must be saved BEFORE losing signal.
 
-IMPORTANT LIMITATIONS:
-- The background is a coordinate reference grid, NOT a preloaded aerial/topographic map. Actual map data must be sourced and imported legally.
-- The app currently saves metadata and GeoJSON in localStorage, which is capacity-limited and can be cleared by iOS. Image overlay is session-only and must be reimported on restart.
-- iOS PWA background tracking is not reliable if locked or app is suspended.
-- In Safari opened as file://, service workers and geolocation may be unavailable. A secure HTTPS host is needed for a proper iPhone PWA installation. Free hosting providers exist, but their future terms/limits cannot be guaranteed.
-- The map is not a survey and not a substitute for landowner permission or safe navigation.
-- Do NOT bulk-download OpenStreetMap public tiles for offline use; this violates that service's policy.
-- USGS National Map generally offers public domain data, but inspect metadata because some individual topo products contain copyrighted third-party data.
-- Texas GIO parcel downloads may be available; verify terms and data validity per dataset before importing.
+TO UPDATE GITHUB:
+1. Extract this ZIP. In your public github.com/ryanmh21/fieldatlas repo, replace index.html and sw.js with the two updated files from this ZIP (and optionally README.txt).
+2. Wait for GitHub Pages to deploy, then open the URL on iPhone Safari, refresh online, and fully close/reopen Home Screen app if it still shows V1.
+3. Find your hunting location. Choose Satellite or Topo. Zoom to the desired area then tap Download visible map; download several nearby areas if needed.
+4. IMPORTANT: test Airplane Mode at home before travel, including relaunch of app. iPhone can clear website storage without notice.
 
-TO USE:
-1. Host this folder on any HTTPS static file host (e.g. free hosting plan subject to its terms), then open URL in iPhone Safari.
-2. Share > Add to Home Screen. Open it once online to pre-cache the app shell.
-3. Turn on airplane mode and test startup / saved waypoints before the trip.
-4. Import locally saved .geojson for parcels or boundary data using the file picker. Export backups periodically.
-
-LEGAL SOURCES CHECKED 2026-11-17:
-USGS National Map licensing: https://www.usgs.gov/faqs/what-are-terms-uselicensing-map-services-and-data-national-map
-USGS topographic third-party exceptions: https://www.usgs.gov/faqs/are-usgs-topographic-maps-copyrighted
-Texas GIO parcel portal: https://geographic.texas.gov/stratmap/land-parcels
-OSM public tile offline restrictions: https://operations.osmfoundation.org/policies/tiles/
+LIMITATIONS:
+- USGS aerial imagery may be dated; it is not live satellite video. At very close zoom, imagery may stop being available.
+- Offline tiles are saved in browser CacheStorage and may be evicted by iOS. Not reliable enough as sole backcountry navigation system.
+- Offline download saves only visible extent at selected zoom plus two higher levels, for current layer; repeat for Topo and Satellite.
+- Parcel ownership/lines are NOT automatically populated. Import GeoJSON with verified rights from Texas GIO/county sources.
+- No survey precision; landowner names and boundaries may be incomplete/outdated.
+- Uses no paid API. Public-domain USGS mapping data service sources: https://www.usgs.gov/faqs/what-are-terms-uselicensing-map-services-and-data-national-map and https://basemap.nationalmap.gov/arcgis/rest/services
+- Does not request personal data accounts. Points and tracks remain stored locally on device and should be backed up.
+- This build has not been device-tested. Web service availability is controlled by USGS.
